@@ -218,6 +218,14 @@ th {
   padding: 0;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .navbar {
   position: fixed;
   background-color: var(--primary-nav-background);
@@ -297,6 +305,7 @@ th {
   .navbar {
     bottom: 0;
     width: 100vw;
+    max-width: 100%;
     height: 5rem;
   }
 
@@ -336,6 +345,100 @@ th {
     left: 0px;
   }
 }
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.form {
+  padding: 10px;
+  max-width: 260px;
+  background-color: var(--tertiary-nav-background);
+  border-radius: 4px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+  border: none;
+  outline: none;
+  color: var(--primary-text);
+  width: 100%;
+  height: 45px;
+  background: 0 0;
+  border-bottom: 2px solid var(--secondary-text);
+}
+input[type=text]::placeholder,
+input[type=password]::placeholder,
+input[type=email]::placeholder {
+  color: var(--secondary-text);
+}
+
+.form-button {
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 26px;
+  text-shadow: none;
+  outline: 0;
+  width: 100%;
+  background-color: var(--primary-nav-background);
+  color: var(--primary-text);
+  opacity: 0.7;
+}
+.form-button:disabled {
+  opacity: 0.5;
+}
+.form-button:disabled:hover, .form-button:disabled:focus {
+  opacity: 0.5;
+  color: var(--primary-text);
+}
+.form-button:disabled:focus-visible {
+  border: 2px solid var(--primary-accent);
+}
+.form-button:hover, .form-button:focus {
+  color: var(--primary-accent);
+  opacity: 0.6;
+}
+
+.form-icon {
+  display: flex;
+  max-height: 130px;
+  margin: 20px auto;
+  animation: spin 6s linear infinite;
+}
+
+.form-error {
+  color: var(--error);
+  margin-block-start: 11px;
+  margin-block-end: 0;
+}
+
+.form-label-group {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.form-label-group .form-label {
+  color: var(--secondary-text);
+  position: absolute;
+  pointer-events: none;
+  top: 13px;
+  left: 2px;
+  transition: all 0.1s ease;
+}
+.form-label-group input:focus ~ .form-label,
+.form-label-group input:not(:focus):valid ~ .form-label {
+  top: -15px;
+  bottom: 0px;
+  left: 0px;
+  font-size: 11px;
+  opacity: 1;
+  color: var(--primary-accent);
+}
+
 :root {
   font-size: 16px;
   font-family: "Montserrat";
@@ -344,16 +447,20 @@ th {
   --secondary-text: hsl(0, 0%, 93%);
   --primary-nav-background: hsl(240, 14%, 16%);
   --secondary-nav-background: hsl(240, 9%, 9%);
+  --tertiary-nav-background: hsla(0, 0%, 100%, 0.15);
   --scrollbar-track: hsl(240, 9%, 13%);
   --scrollbar-thumb: hsl(256, 44%, 50%);
   --primary-accent: hsl(308, 100%, 75%);
   --secondary-accent: hsl(323, 70%, 58%);
+  --error: hsl(0, 100%, 45%);
   --transition-speed: 600ms;
 }
 
 body {
   background: var(--primary-background);
   color: var(--secondary-text);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 body::-webkit-scrollbar {
   width: 0.25rem;
@@ -367,7 +474,10 @@ body::-webkit-scrollbar-thumb {
 
 main {
   margin-left: 5rem;
-  padding: 1rem;
+  height: 100vh;
+  max-height: 100%;
+  display: grid;
+  place-content: center;
 }
 
 .svg-primary {
@@ -386,9 +496,10 @@ main {
 .light {
   --primary-background: hsl(0, 0%, 150%);
   --primary-text: hsl(0, 0%, 12%);
-  --secondary-text: hsl(0, 0%, 0%);
-  --primary-nav-background: hsl(0, 0%, 95%);
-  --secondary-nav-background: hsl(0, 0%, 89%);
+  --secondary-text: hsl(0, 0%, 25%);
+  --primary-nav-background: hsl(0, 0%, 85%);
+  --secondary-nav-background: hsl(0, 0%, 80%);
+  --tertiary-nav-background: hsl(0, 0%, 91%);
 }
 
 .theme-icon {
@@ -401,6 +512,12 @@ main {
 
 .light #light-icon {
   display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    margin-left: 0;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

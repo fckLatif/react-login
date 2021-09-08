@@ -10,16 +10,20 @@
     --secondary-text: hsl(0, 0%, 93%);
     --primary-nav-background: hsl(240, 14%, 16%);
     --secondary-nav-background: hsl(240, 9%, 9%);
+    --tertiary-nav-background: hsla(0, 0%, 100%, 0.15);
     --scrollbar-track: hsl(240, 9%, 13%);
     --scrollbar-thumb: hsl(256, 44%, 50%);
     --primary-accent: hsl(308, 100%, 75%);
     --secondary-accent: hsl(323, 70%, 58%);
+    --error: hsl(0, 100%, 45%);
     --transition-speed: 600ms;
 }
 
 body {
     background: var(--primary-background);
     color: var(--secondary-text);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
 
     &::-webkit-scrollbar {
         width: 0.25rem;
@@ -36,7 +40,10 @@ body {
 
 main {
     margin-left: 5rem;
-    padding: 1rem;
+    height: 100vh;
+    max-height: 100%;
+    display: grid;
+    place-content: center;
 }
 
 .svg-primary {
@@ -55,9 +62,10 @@ main {
 .light {
     --primary-background: hsl(0, 0%, 150%);
     --primary-text: hsl(0, 0%, 12%);
-    --secondary-text: hsl(0, 0%, 0%);
-    --primary-nav-background: hsl(0, 0%, 95%);
-    --secondary-nav-background: hsl(0, 0%, 89%);
+    --secondary-text: hsl(0, 0%, 25%);
+    --primary-nav-background: hsl(0, 0%, 85%);
+    --secondary-nav-background: hsl(0, 0%, 80%);
+    --tertiary-nav-background: hsl(0, 0%, 91%);
 }
 
 .theme-icon {
@@ -73,5 +81,11 @@ main {
 .light {
     #light-icon {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 600px) { 
+    main {
+        margin-left: 0;
     }
 }
