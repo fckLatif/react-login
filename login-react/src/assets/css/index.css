@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+.navbar {
+  position: fixed;
+  background-color: var(--primary-nav-background);
+  transition: width 600ms ease;
+  overflow: none;
+}
+.navbar:hover .nav-logo svg {
+  transform: rotate(-180deg);
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--primary-text);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--secondary-nav-background);
+  color: var(--secondary-text);
+}
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.nav-logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--secondary-text);
+  background: var(--secondary-nav-background);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+.nav-logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+.nav-logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .nav-logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+  .navbar:hover .link-text {
+    display: inline;
+  }
+  .navbar:hover .nav-logo svg {
+    margin-left: 12rem;
+  }
+  .navbar:hover .nav-logo-text {
+    left: 0px;
+  }
+}
+:root {
+  font-size: 16px;
+  font-family: "Montserrat";
+  --primary-background: hsl(240, 14%, 25%);
+  --primary-text: hsl(0, 0%, 71%);
+  --secondary-text: hsl(0, 0%, 93%);
+  --primary-nav-background: hsl(240, 14%, 16%);
+  --secondary-nav-background: hsl(240, 9%, 9%);
+  --scrollbar-track: hsl(240, 9%, 13%);
+  --scrollbar-thumb: hsl(256, 44%, 50%);
+  --primary-accent: hsl(308, 100%, 75%);
+  --secondary-accent: hsl(323, 70%, 58%);
+  --transition-speed: 600ms;
+}
+
+body {
+  background: var(--primary-background);
+  color: var(--secondary-text);
+}
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
+
+main {
+  margin-left: 5rem;
+  padding: 1rem;
+}
+
+.svg-primary {
+  color: var(--primary-accent);
+}
+
+.svg-secondary {
+  color: var(--secondary-accent);
+}
+
+.svg-primary,
+.svg-secondary {
+  transition: var(--transition-speed);
+}
+
+.light {
+  --primary-background: hsl(0, 0%, 150%);
+  --primary-text: hsl(0, 0%, 12%);
+  --secondary-text: hsl(0, 0%, 0%);
+  --primary-nav-background: hsl(0, 0%, 95%);
+  --secondary-nav-background: hsl(0, 0%, 89%);
+}
+
+.theme-icon {
+  display: none;
+}
+
+.dark #dark-icon {
+  display: block;
+}
+
+.light #light-icon {
+  display: block;
+}
+
+/*# sourceMappingURL=index.css.map */
