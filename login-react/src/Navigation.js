@@ -1,3 +1,7 @@
+/**
+ * Navigation Bar
+ * @param {*} children takes the childer of the Navbar element
+ */
 export function Navbar(props) {
     return (
       <nav className="navbar">
@@ -7,7 +11,14 @@ export function Navbar(props) {
       </nav>
     );
 }
-  
+
+
+/**
+ * Navigation Title
+ * @param {*} href set the redirect location
+ * @param {*} icon input to add your own icons
+ * @param {*} text set the custom link text of the NavItem
+ */
 export function NavTitle(props) {
     return (
       <li className="nav-logo">
@@ -18,7 +29,14 @@ export function NavTitle(props) {
       </li>
     );
 }
-  
+
+/**
+ * Navigation Item
+ * @param {*} href set the redirect location
+ * @param {*} onclick set the onClick event
+ * @param {*} icon input to add your own icons
+ * @param {*} text set the custom link text of the NavItem
+ */
 export function NavItem(props) {
     return (
       <li className="nav-item">
