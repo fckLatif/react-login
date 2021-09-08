@@ -1,0 +1,77 @@
+@use 'abstracts' as a;
+@use 'components' as c;
+
+:root {
+    font-size: 16px;
+    font-family: 'Montserrat';
+
+    --primary-background: hsl(240, 14%, 25%);
+    --primary-text: hsl(0, 0%, 71%);
+    --secondary-text: hsl(0, 0%, 93%);
+    --primary-nav-background: hsl(240, 14%, 16%);
+    --secondary-nav-background: hsl(240, 9%, 9%);
+    --scrollbar-track: hsl(240, 9%, 13%);
+    --scrollbar-thumb: hsl(256, 44%, 50%);
+    --primary-accent: hsl(308, 100%, 75%);
+    --secondary-accent: hsl(323, 70%, 58%);
+    --transition-speed: 600ms;
+}
+
+body {
+    background: var(--primary-background);
+    color: var(--secondary-text);
+
+    &::-webkit-scrollbar {
+        width: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--scrollbar-track);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb);
+    }
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.svg-primary {
+    color: var(--primary-accent);
+}
+
+.svg-secondary {
+    color: var(--secondary-accent);
+}
+
+.svg-primary,
+.svg-secondary {
+    transition: var(--transition-speed);
+}
+
+.light {
+    --primary-background: hsl(0, 0%, 150%);
+    --primary-text: hsl(0, 0%, 12%);
+    --secondary-text: hsl(0, 0%, 0%);
+    --primary-nav-background: hsl(0, 0%, 95%);
+    --secondary-nav-background: hsl(0, 0%, 89%);
+}
+
+.theme-icon {
+    display: none;
+}
+
+.dark {
+    #dark-icon {
+        display: block;
+    }
+}
+
+.light {
+    #light-icon {
+        display: block;
+    }
+}
