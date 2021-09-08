@@ -3,8 +3,10 @@ import { ReactComponent as LogoIcon } from './assets/svg/menu-icon.svg'
 import { ReactComponent as RegisterIcon } from './assets/svg/register-icon.svg'
 import { ReactComponent as LightIcon } from './assets/svg/light-icon.svg'
 import { ReactComponent as DarkIcon } from './assets/svg/dark-icon.svg'
+import { ReactComponent as ReactIcon } from './assets/svg/react-icon.svg'
 import { Navbar, NavTitle, NavItem } from './Navigation'
-import { Form } from './Form'
+import { Content, Main } from './Layout'
+import Form from './Form'
 
 function App() {
   const [ colorTheme, setColorTheme ] = useState('dark')
@@ -34,11 +36,16 @@ function RenderTheme() {
 }
 
   return (
-    <Navbar>
-      <NavTitle text="CREEP" icon={<LogoIcon />} />
-      <NavItem icon={<RegisterIcon />} text="Register" />
-      <RenderTheme />
-    </Navbar>
+    <Content>
+      <Navbar>
+        <NavTitle text="CREEP" icon={<LogoIcon />} />
+        <NavItem icon={<RegisterIcon />} text="Register" />
+        <RenderTheme />
+      </Navbar>
+      <Main>
+        <Form icon={<ReactIcon/>}/>
+      </Main>
+    </Content>
   );
 }
 

@@ -21,7 +21,7 @@ export function Navbar(props) {
  */
 export function NavTitle(props) {
     return (
-      <li className="nav-logo">
+      <li role="listitem" className="nav-logo">
         <a className="nav-link" href={ props.href }>
           <span className="link-text nav-logo-text"> { props.text } </span>
           { props.icon }
@@ -39,8 +39,8 @@ export function NavTitle(props) {
  */
 export function NavItem(props) {
     return (
-      <li className="nav-item">
-        <a className="nav-link" href={ props.href } onClick={ props.onclick }>
+      <li role="listitem" className="nav-item">
+        <a role="link" className="nav-link" href={ props.href } onClick={ props.onclick }>
           { props.icon }
           <span className="link-text"> { props.text } </span>
         </a>
